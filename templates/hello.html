@@ -15,18 +15,21 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-4">
-            <div class="select2-container">
-                <div class="add-task-div">
-                    <h3 class="brand">Add Task</h3>
-                    <div>
-                        <label>
-                            <input type="text" placeholder="New Task">
-                        </label>
-                        <button class="taskAdd" name="taskAdd" type="submit"><i class="fa fa-plus icon"></i>Add task
-                        </button>
+            <form action="" method="post">
+                {% csrf_token %} <!-- csrf token for basic security -->
+                <div class="select2-container">
+                    <div class="add-task-div">
+                        <h3 class="brand">Add Task</h3>
+                        <div>
+                            <label>
+                                <input type="text" id="description" class="taskName" placeholder="What do you need to do?" name="description" required>
+                            </label>
+                            <button class="taskAdd" name="taskAdd" type="submit"><i class="fa fa-plus icon"></i>Add task
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
         <div class="col-8">
             <h1>Your tasks</h1>
